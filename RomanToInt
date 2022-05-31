@@ -1,0 +1,59 @@
+********************************************************* Roman To Int ************************************************************
+enum Roman : String {
+    case I
+    case V
+    case X
+    case L
+    case C
+    case D
+    case M
+    
+    var Value : Int {
+        switch self {
+        case .I :
+            return 1
+        case .V:
+            return 5
+        case .X:
+            return 10
+        case .L:
+            return 50
+        case .C:
+            return 100
+        case .D:
+            return 500
+        case .M:
+            return 1000
+            
+        }
+    }
+    
+}
+class Solution {
+    func romanToInt(_ s: String) -> Int {
+        let S_Arr = Array(s)
+        var sum = 0
+        var curValue = 0
+        
+        for index in 0...(S_Arr.count-1 ){
+            
+            if index < (S_Arr.count-1) {
+                
+                if( S_Arr[index] == "I" && (S_Arr[index+1] == "V" || S_Arr[index+1] == "X")) || ( S_Arr[index] == "X" && (S_Arr[index+1] == "L" || S_Arr[index+1] == "C")) || ( S_Arr[index] == "C" && (S_Arr[index+1] == "D" || S_Arr[index+1] == "M")){
+                    
+                    curValue = ((Roman(rawValue: String(S_Arr[index+1]))!.Value - Roman(rawValue: String(S_Arr[index]))!.Value) - Roman(rawValue: String(S_Arr[index+1]))!.Value)
+                    
+                }else{
+                    curValue = Roman(rawValue: String(S_Arr[index]))!.Value
+                }
+            }else{
+                curValue = Roman(rawValue: String(S_Arr[index]))!.Value
+            }
+            sum += curValue
+            
+        }
+        return sum
+        
+        
+    }
+}
