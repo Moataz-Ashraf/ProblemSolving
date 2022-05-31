@@ -1,0 +1,17 @@
+**************************************************** lengthOfLongestSubstring ************************************************************
+class Solution {
+    func lengthOfLongestSubstring(_ s: String) -> Int {
+        guard s.count > 1 else { return s.count }
+        var maxCount = 0
+        var curSubstring: [Character] = []
+        for char in s {
+            if let index = curSubstring.firstIndex(of: char) {
+                
+                curSubstring.removeFirst(index+1)
+                
+            }
+            curSubstring.append(char)
+            maxCount = max(maxCount, curSubstring.count)
+        }
+        return maxCount
+    }
