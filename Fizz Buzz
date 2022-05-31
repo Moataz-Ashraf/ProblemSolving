@@ -1,0 +1,18 @@
+****************************************************  Fizz Buzz ************************************************************
+class Solution {
+    func fizzBuzz(_ n: Int) -> [String] {
+        var ArrStr : [String] = []
+        for i in 1...n {
+            if (i % 3 == 0 && i % 5 == 0){
+                ArrStr.append("FizzBuzz")
+            }else if (i % 3 == 0 && i % 5 != 0){
+                ArrStr.append("Fizz")
+            }else if (i % 3 != 0 && i % 5 == 0){
+                ArrStr.append("Buzz")
+            }else{
+                ArrStr.append("\(i)")
+            }
+        }
+        return ArrStr
+    }
+}
