@@ -1,0 +1,23 @@
+**************************************************** Ransom Note ************************************************************
+
+class Solution {
+    func canConstruct(_ ransomNote: String, _ magazine: String) -> Bool {
+        var CurBool = true
+        var ArrMagazine = Array(magazine)
+        ransomNote.map{ c in
+            if ArrMagazine.contains(c) {
+                CurBool = (CurBool && true)
+                if let index = ArrMagazine.firstIndex(of: c) {
+                    ArrMagazine.remove(at: index)
+                }
+                print(ArrMagazine)
+                    
+            }else{
+                CurBool = (CurBool && false)
+            }
+            
+            print(CurBool)
+            }
+        return CurBool
+    }
+}
