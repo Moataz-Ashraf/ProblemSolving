@@ -1,0 +1,18 @@
+****************************************************  Richest Customer Wealth ************************************************************
+
+class Solution {
+    func maximumWealth(_ accounts: [[Int]]) -> Int {
+        var max = 0
+        var arr : [Int] = []
+        for i in (accounts) {
+            for j in i {
+                max += j
+                
+            }
+            arr.append(max)
+            max = 0
+        }
+        max = (arr.sorted()).last!
+        return max
+    }
+}
