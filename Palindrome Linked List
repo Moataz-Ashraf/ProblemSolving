@@ -1,0 +1,30 @@
+
+****************************************************  Palindrome Linked List ************************************************************
+class Solution {
+    func isPalindrome(_ head: ListNode?) -> Bool {
+        var ArrList : [ListNode] = []
+        var CurNode = head
+        
+        while CurNode != nil {
+            ArrList.append(CurNode!)
+            CurNode = CurNode?.next
+        }
+        
+        var index = ArrList.count/2
+        var UpMid = ArrList.count/2
+        var BoolCheck = true
+        print(ArrList.count/2)
+        while index != 0{
+            if ArrList.count % 2 != 0 {
+                BoolCheck = ((ArrList[(UpMid+1)].val == ArrList[index-1].val) && BoolCheck)
+            }else{
+                BoolCheck = (BoolCheck && (ArrList[(UpMid)].val == ArrList[index-1].val))
+            }
+            
+            UpMid += 1
+            index -= 1
+        }
+        
+        return BoolCheck
+    }
+}
