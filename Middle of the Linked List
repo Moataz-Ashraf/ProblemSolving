@@ -1,0 +1,22 @@
+****************************************************  Middle of the Linked List ************************************************************
+class ListNode {
+    var val: Int
+    var next: ListNode?
+   
+public init(_ val: Int) { self.val = val; self.next = nil; }
+    
+}
+
+
+class Solution {
+    func middleNode(_ head: ListNode?) -> ListNode? {
+        var ListArr : [ListNode] = []
+        var CurHaed = head
+        while CurHaed != nil {
+            ListArr.append(CurHaed!)
+            CurHaed = CurHaed?.next
+            
+        }
+        return ListArr[ListArr.count/2]
+    }
+}
