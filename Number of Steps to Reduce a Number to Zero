@@ -1,0 +1,19 @@
+**************************************************  Number of Steps to Reduce a Number to Zero **********************************************************
+
+class Solution {
+    func numberOfSteps(_ num: Int) -> Int {
+        var count = 0 
+        var NewNum = num
+        
+        while NewNum != 0 {
+        if NewNum % 2 == 0 {
+            NewNum = NewNum/2 
+            count += 1
+        }else {
+            NewNum -= 1
+            count += 1
+        }
+    }
+        return count
+    }
+}
