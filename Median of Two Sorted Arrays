@@ -1,0 +1,13 @@
+class Solution {
+    func findMedianSortedArrays(_ nums1: [Int], _ nums2: [Int]) -> Double {
+        guard nums1.count >= 1 || nums2.count >= 1 else { return  0.0}
+        var arr = (nums1+nums2).sorted()
+        let medianIndex = arr.count/2 
+        
+        if arr.count % 2 == 0 {
+            return (Double((arr[medianIndex-1]+arr[medianIndex]))/2.0)
+        }else{
+            return Double(arr[medianIndex])
+        }
+    }
+}
