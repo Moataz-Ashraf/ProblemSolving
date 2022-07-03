@@ -1,0 +1,7 @@
+class Solution {
+    func isPalindrome(_ x: Int) -> Bool {
+        var arr: [Character] = []
+        arr.append(contentsOf: "\(x)")
+        return arr == arr.reversed() 
+    }
+}
